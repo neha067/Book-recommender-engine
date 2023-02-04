@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Book Recommender System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <style>
+        .text-white{
+            color:red;
+        }
+    </style>
+    <body style="background-color:black">
+        <nav class="navbar" style="background-color:#00a65a">
+            <a class="navbar-brand">My Book Recommender</a>
+            <ul class="nav navbar-nav">
+            <li style="display:inline"><a href="/">Home</a></li>
+            <li style="display:inline"><a href="/recommend">Recommend</a></li>
+            <li style="display:inline"><a>Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h1 class="text-white" style="font-size:50px">Top 50 Books</h1>
+                </div>
+
+                {% for i in range(book_name|length) %}
+                    <div class="col-md-3" style="margin-top:30px">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top" src="{{ image[i] }}">
+                                <h2 style="color:blue">{{ book_name[i] }}</h2>
+                                
+                                <h4 class="text-white">{{ author[i] }}</h4>
+                                <h4 class="text-white">Votes- {{ votes[i]}}</h4>
+                                <h4 class="text-white">Rating - {{ rating[i] }}</h4>
+                            </div>
+                        </div>
+                    </div> 
+                {% endfor %}
+                 
+
+                
+                
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
